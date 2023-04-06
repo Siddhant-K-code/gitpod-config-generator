@@ -1,0 +1,57 @@
+{
+  "name": "gitpod-config-generator",
+  "displayName": "gitpod-config-generator",
+  "version": "0.0.1",
+  "description": "It helps you to generate gitpod configuration file according to your project structure",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Siddhant-K-code/gitpod-config-generator/"
+  },
+  "author": "Siddhant Khare",
+  "publisher": "Siddhant-K-code",
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitpod-config-generator.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "gitpod-config-generator.generateConfig",
+        "title": "Generate Gitpod Config"
+      },
+      {
+        "command": "gitpod-config-generator.selectLanguage",
+        "title": "Select Language and Generate Gitpod Config"
+      }
+    ]
+  },
+  "activationEvents": [],
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "vscode": "^1.77.0"
+  }
+}
